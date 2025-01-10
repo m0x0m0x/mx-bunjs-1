@@ -29,7 +29,7 @@ const server = Bun.serve({
                 headers: {
                     'Content-Type': 'text/html',
                 },
-            });
+            }); bv
         }
 
         //handle error 
