@@ -7,7 +7,8 @@ const app = new Elysia().get("/", () => "Hello fucker")
   })
   .decorate('getDate', () => new Date())
   .get('/post/:id', ({ params: { id } }) => { return { id: id, title: 'learnPanty', comment: 'Sniffing and licking' } })
-  .post('/post', ({ body, set }) => {
+  .post('/post', ({ body, set, store }) => {
+    console.log(store)
     set.status = 201
     return body
   })
