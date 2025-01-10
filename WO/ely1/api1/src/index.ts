@@ -8,13 +8,17 @@ const app = new Elysia().get("/", () => "Hello fucker")
   })
   .get('/track/*', () => { return 'Track Routes' })
   .get('/tracks', () => {
-    return new Response(JSON.stringify(
+    return new Response(JSON.stringify({
       "tracks": [
-      "Panty Smelling",
-      "Panty Licking",
-      "Panty Sniffing",
-    ]
-    ))
+        "Panty Smelling",
+        "Panty Licking",
+        "Panty Sniffing",
+      ]
+    }), {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
   })
   .listen(3000);
 
