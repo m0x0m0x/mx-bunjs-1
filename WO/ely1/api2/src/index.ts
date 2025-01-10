@@ -5,6 +5,7 @@ const plugin = new Elysia()
   .state('plugin-version', 1)
   .get('/form-plugin', () => 'Fuck')
   .get('/greet', () => 'Lick Pussy')
+  .get('/greet/:name', ({ params: { name } }) => `Lick Pussy ${name}`)
 
 // Application 
 const app = new Elysia().get("/", () => "Hello fucker")
@@ -35,6 +36,7 @@ const app = new Elysia().get("/", () => "Hello fucker")
     // })
     console.log('getDate', getDate())
     console.log('store', store)
+    console.log(store['plugin-version'])
     return {
       "tracks": [
         "Panty Smelling",
