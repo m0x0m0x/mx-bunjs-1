@@ -2,7 +2,7 @@ import { Elysia } from "elysia";
 
 const app = new Elysia().get("/", () => "Hello fucker")
   .get('/post/:id', ({ params: { id } }) => { return { id: id, title: 'learnPanty', comment: 'Sniffing and licking' } })
-  .post('/post', ({ body: { id, title, comment } }) => { return { id: id, title: title, comment: comment } })
+  .post('/post', (body) => { return body })
   .listen(3000);
 
 console.log(
