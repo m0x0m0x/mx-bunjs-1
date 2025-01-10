@@ -1,6 +1,14 @@
 import { Elysia } from "elysia";
 
+// Define Plugin - Plugin Usage 
+const plugin = new Elysia()
+  .state('plugin-version', 1)
+  .get('/form-plugin', () => 'Fuck')
+  .get('/greet', () => 'Lick Pussy')
+
+// Application 
 const app = new Elysia().get("/", () => "Hello fucker")
+  .use(plugin)
   .state({
     id: 1,
     email: 'panty@gmail.com'
