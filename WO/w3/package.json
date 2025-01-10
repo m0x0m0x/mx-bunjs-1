@@ -8,7 +8,11 @@
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
-  "scripts" : {
-    "start" : "bun run index.ts"
+  "scripts": {
+    "start": "bun run index.ts"
+  },
+  "dependencies": {
+    "@types/figlet": "^1.7.0",
+    "figlet": "^1.8.0"
   }
 }
