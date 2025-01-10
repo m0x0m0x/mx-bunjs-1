@@ -1,6 +1,8 @@
 import { Elysia } from "elysia";
 
 const app = new Elysia().get("/", () => "Hello fucker")
+  .state('Version', 1)
+  .decorate('getDate', () => new Date())
   .get('/post/:id', ({ params: { id } }) => { return { id: id, title: 'learnPanty', comment: 'Sniffing and licking' } })
   .post('/post', ({ body, set }) => {
     set.status = 201
@@ -8,17 +10,25 @@ const app = new Elysia().get("/", () => "Hello fucker")
   })
   .get('/track/*', () => { return 'Track Routes' })
   .get('/tracks', () => {
-    return new Response(JSON.stringify({
+    // return new Response(JSON.stringify({
+    //   "tracks": [
+    //     "Panty Smelling",
+    //     "Panty Licking",
+    //     "Panty Sniffing",
+    //   ]
+    // }), {
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   }
+    // })
+    return {
       "tracks": [
         "Panty Smelling",
         "Panty Licking",
         "Panty Sniffing",
+        "Ass Worship"
       ]
-    }), {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
+    }
   })
   .listen(3000);
 
