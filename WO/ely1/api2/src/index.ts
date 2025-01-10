@@ -1,11 +1,6 @@
 import { Elysia } from "elysia";
+import { plugin } from "./plugin";
 
-// Define Plugin - Plugin Usage 
-const plugin = new Elysia()
-  .state('plugin-version', 1)
-  .get('/form-plugin', () => 'Fuck')
-  .get('/greet', () => 'Lick Pussy')
-  .get('/greet/:name', ({ params: { name } }) => `Lick Pussy ${name}`)
 
 // Application 
 const app = new Elysia().get("/", () => "Hello fucker")
