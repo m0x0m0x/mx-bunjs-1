@@ -2,8 +2,14 @@ import { Elysia } from "elysia";
 
 const app = new Elysia().get("/", () => "Hello fucker")
   .get('/post/:id', ({ params: { id } }) => { return { id: id, title: 'learnPanty', comment: 'Sniffing and licking' } })
-  .post('/post', ({ body }) => { return body })
+  .post('/post', ({ body, set }) => {
+    set.status = 201
+    return body
+  })
   .get('/track/*', () => { return 'Track Routes' })
+  .get('/tracks', () => {
+    JSON.stringify({ message: 'Track Routes' })
+  })
   .listen(3000);
 
 console.log(
